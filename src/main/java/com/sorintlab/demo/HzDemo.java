@@ -34,7 +34,7 @@ public class HzDemo {
 
 
     private void runV3() throws Exception {
-        String xmlJarPathName = "/Users/mdavid/projects/binaries/hazelcast/hazelcast-3.12.5/lib/hazelcast-all-3.12.5.jar";
+        String xmlJarPathName = "./ext-lib/hazelcast-all-3.12.5.jar";
         String clientClassName = "com.hazelcast.client.HazelcastClient";
         String instanceClassName = "com.hazelcast.core.HazelcastInstance";
         String clientConfigClassName = "com.hazelcast.client.config.ClientConfig";
@@ -68,8 +68,7 @@ public class HzDemo {
     }
 
     private void runV4() throws Exception {
-        String xmlJarPathName =
-                "/Users/mdavid/projects/binaries/hazelcast/hazelcast-4.1-BETA-1/lib/hazelcast-all-4.1-BETA-1.jar";
+        String xmlJarPathName = "./ext-lib/hazelcast-all-4.1-BETA-1.jar";
 
         String clientClassName = "com.hazelcast.client.HazelcastClient";
         String instanceClassName = "com.hazelcast.core.HazelcastInstance";
