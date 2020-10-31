@@ -10,15 +10,15 @@ public class HzDemo {
 
     public static void main(String[] args) {
 
-//        new Thread() {
-//            public void run() {
-//                try {
-//                    new HzDemo().runV3();
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }.start();
+        new Thread() {
+            public void run() {
+                try {
+                    new HzDemo().runV3();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
 
         new Thread() {
             public void run() {

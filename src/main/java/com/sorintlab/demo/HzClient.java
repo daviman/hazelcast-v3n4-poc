@@ -9,8 +9,6 @@ public class HzClient {
 
     private HzConfiguration configuration = null;
 
-//    private Class<?> hazelcastInstanceClass = null;
-
     private Object hazelcastInstance = null;
 
     public HzClient(HzConfiguration configuration) {

@@ -16,13 +16,6 @@ public class HzConfiguration {
 
     private JarClassLoader jarClassLoader;
 
-    /**
-     Class<?> hzClientClass_3_12 = versionLoaderV33_12.loadClass("com.hazelcast.client.HazelcastClient");
-     Class<?> hzInstanceClass_3_12 = versionLoaderV33_12.loadClass("com.hazelcast.core.HazelcastInstance");
-     Class<?> hzClientConfigClass_3_12 = versionLoaderV33_12.loadClass("com.hazelcast.client.config.ClientConfig");
-     Class<?> hzXmlClientConfigClass_3_12 = versionLoaderV33_12.loadClass("com.hazelcast.client.config.ClientClasspathXmlConfig");
-     */
-
     public HzConfiguration(String clientClassName,
                            String instanceClassName,
                            String configClassName,
