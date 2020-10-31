@@ -39,16 +39,25 @@ public class HzDemo {
     }
 
     private void testMovement() {
-        HzClient clientV3 = getClientV3();
-        HzClient clientV4 = getClientV4();
 
-        String mapName = "my-test";
-        Map<Integer, String> seededMap = seedMap(clientV3, mapName);
-        int count = storeMap(clientV4, mapName, seededMap);
+        HzClient clientV3 = null;
+        HzClient clientV4 = null;
+        try {
+            clientV3 = getClientV3();
+            clientV4 = getClientV4();
 
-        System.out.println("Source map size: " + seededMap.size());
-        System.out.println("Target map size: " + count);
+            String mapName = "my-test";
+            Map<Integer, String> seededMap = seedMap(clientV3, mapName);
+            int count = storeMap(clientV4, mapName, seededMap);
 
+            System.out.println("Source map size: " + seededMap.size());
+            System.out.println("Target map size: " + count);
+        } finally {
+            try {
+                clientV3.shutdown();
+                clientV4.shutdown();
+            } catch (Exception doNothing) {}
+        }
     }
 
     private int storeMap(HzClient targetClient, String mapName, Map<Integer, String> sourceMap) {
@@ -69,7 +78,7 @@ public class HzDemo {
                 client.getDistributedObject(DistributedObjectType.Map, mapName);
 
         Random random = new Random();
-        IntStream.range(1, 1000).forEach(i ->
+        IntStream.range(0, 1000).forEach(i ->
                 {
                     Integer key = random.nextInt();
                     hzMap.put(key, "value-"+key);
